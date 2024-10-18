@@ -19,6 +19,7 @@ namespace miPrimerProyecto {
                 Console.WriteLine("5. Exponeciacion");
                 Console.WriteLine("6. Raiz");
                 Console.WriteLine("7. Factorial");
+                Console.WriteLine("8. Acumulador");
                 Console.WriteLine("Salir cualquiera");
                 Console.Write("Opcion: ");
                 int opcion = int.Parse(Console.ReadLine());
@@ -46,11 +47,24 @@ namespace miPrimerProyecto {
                     case 7:
                         factorial();
                         break;
+                    case 8:
+                        acumulador();
+                        break;
                     default:
                         continuar = "n";
                         break;
                 }
             }
+        }
+        static void acumulador() {
+            int acumulador = 0, 
+                num = 0;
+            do {
+                Console.Write("Num: ");
+                num = int.Parse(Console.ReadLine());
+                acumulador += num;
+            } while (num>0);
+            Console.WriteLine("El acumulador es igual a: {0}", acumulador);
         }
         static void suma() {
             Console.Write("Num 1: ");
