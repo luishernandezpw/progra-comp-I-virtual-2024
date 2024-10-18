@@ -19,55 +19,108 @@ namespace miPrimerProyecto {
                 Console.WriteLine("5. Exponeciacion");
                 Console.WriteLine("6. Raiz");
                 Console.WriteLine("7. Factorial");
-                Console.WriteLine("8. Salir");
+                Console.WriteLine("Salir cualquiera");
                 Console.Write("Opcion: ");
                 int opcion = int.Parse(Console.ReadLine());
 
                 Console.Clear();
-
-                if (opcion == 8) {
-                    continuar = "n";
-                } else {
-                    Console.Write("Num 1: ");
-                    double num1 = double.Parse(Console.ReadLine());
-                    double num2 = 0;
-
-                    if (opcion != 7) {
-                        Console.Write("Num 2: ");
-                        num2 = double.Parse(Console.ReadLine());
-                    }
-                    double respuesta = 0;
-                    String operacion = "";
-
-                    if (opcion == 1) {
-                        respuesta = num1 + num2;
-                        operacion = "suma";
-                    } else if (opcion == 2) {
-                        respuesta = num1 - num2;
-                        operacion = "resta";
-                    } else if (opcion == 3) {
-                        respuesta = num1 * num2;
-                        operacion = "multiplicacion";
-                    } else if (opcion == 4) {
-                        respuesta = num1 / num2;
-                        operacion = "division";
-                    } else if (opcion == 5) {
-                        respuesta = Math.Pow(num1, num2);
-                        operacion = "exponeciacion";
-                    } else if (opcion == 6) {
-                        respuesta = Math.Pow(num1, 1/num2);// raiz 2 de 16 = 16^(1/2)=4
-                        operacion = "raiz "+ num2;
-                    }else if (opcion == 7) {
-                        //5! = 5*4*3*2= 120
-                        respuesta = 1;
-                        for (int i = 2; i <= num1; i++) {
-                            respuesta *= i; //factorial = factorial * i;
-                        }
-                        operacion = "factorial";
-                    }
-                    Console.WriteLine("La {0} es igual a: {1}", operacion, respuesta);
+                switch (opcion) {
+                    case 1:
+                        suma();
+                        break;
+                    case 2:
+                        resta();
+                        break;
+                    case 3:
+                        multiplicacion();
+                        break;
+                    case 4:
+                        division();
+                        break;
+                    case 5:
+                        exponenciacion();
+                        break;
+                    case 6:
+                        raiz();
+                        break;
+                    case 7:
+                        factorial();
+                        break;
+                    default:
+                        continuar = "n";
+                        break;
                 }
             }
+        }
+        static void suma() {
+            Console.Write("Num 1: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Num 2: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            double respuesta = num1 + num2;
+            Console.WriteLine("La suma es igual a: {0}", respuesta);
+        }
+        static void resta() {
+            Console.Write("Num 1: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Num 2: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            double respuesta = num1 - num2;
+            Console.WriteLine("La resta es igual a: {0}", respuesta);
+        }
+        static void multiplicacion() {
+            Console.Write("Num 1: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Num 2: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            double respuesta = num1 * num2;
+            Console.WriteLine("La multiplicacion es igual a: {0}", respuesta);
+        }
+        static void division() {
+            Console.Write("Num 1: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Num 2: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            double respuesta = num1 / num2;
+            Console.WriteLine("La division es igual a: {0}", respuesta);
+        }
+        static void exponenciacion() {
+            Console.Write("Base: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Exponenete: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            double respuesta = Math.Pow(num1, num2);
+            Console.WriteLine("La base {0} elevado a {1} es igual a: {2}", num1, num2, respuesta);
+        }
+        static void raiz() {
+            Console.Write("Radicando: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Indice: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            double respuesta = Math.Pow(num1, 1 / num2);// raiz 2 de 16 = 16^(1/2)=4
+            Console.WriteLine("La raiz del radicando {0} del indice {1} es igual a: {2}",num1 , num2, respuesta);
+        }
+        static void factorial() {
+            Console.Write("Num: ");
+            double num = double.Parse(Console.ReadLine());
+            //5! = 5*4*3*2= 120
+            double respuesta = 1;
+            for (int i = 2; i <= num; i++) {
+                respuesta *= i; //factorial = factorial * i;
+            }
+            Console.WriteLine("El factorial de {0} es igual a: {1}", num, respuesta);
         }
     }
 }
