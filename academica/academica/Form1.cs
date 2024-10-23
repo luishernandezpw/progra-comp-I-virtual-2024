@@ -13,5 +13,10 @@ namespace academica {
         public Form1() {
             InitializeComponent();
         }
+
+        private void btnSaludar_Click(object sender, EventArgs e) {
+            MessageBox.Show("Hola, chicos de Progra I. Bienvenidos al fascinante mundo de la programacion.",
+                "Saludo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

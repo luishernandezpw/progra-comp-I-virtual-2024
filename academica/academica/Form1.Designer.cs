@@ -23,13 +23,36 @@
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.btnSaludar = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnSaludar
+            // 
+            this.btnSaludar.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaludar.ForeColor = System.Drawing.Color.Blue;
+            this.btnSaludar.Location = new System.Drawing.Point(195, 94);
+            this.btnSaludar.Name = "btnSaludar";
+            this.btnSaludar.Size = new System.Drawing.Size(232, 83);
+            this.btnSaludar.TabIndex = 0;
+            this.btnSaludar.Text = "SALUDAR";
+            this.btnSaludar.UseVisualStyleBackColor = true;
+            this.btnSaludar.Click += new System.EventHandler(this.btnSaludar_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.btnSaludar);
+            this.Name = "Form1";
+            this.Text = "Saludo";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnSaludar;
     }
 }
 
