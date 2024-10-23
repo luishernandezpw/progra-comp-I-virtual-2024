@@ -1,7 +1,0 @@
-C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\miPrimerProyecto\miPrimerProyecto\bin\Debug\miPrimerProyecto.exe.config
-C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\miPrimerProyecto\miPrimerProyecto\bin\Debug\miPrimerProyecto.exe
-C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\miPrimerProyecto\miPrimerProyecto\bin\Debug\miPrimerProyecto.pdb
-C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\miPrimerProyecto\miPrimerProyecto\obj\Debug\miPrimerProyecto.csproj.AssemblyReference.cache
-C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\miPrimerProyecto\miPrimerProyecto\obj\Debug\miPrimerProyecto.csproj.CoreCompileInputs.cache
-C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\miPrimerProyecto\miPrimerProyecto\obj\Debug\miPrimerProyecto.exe
-C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\miPrimerProyecto\miPrimerProyecto\obj\Debug\miPrimerProyecto.pdb
