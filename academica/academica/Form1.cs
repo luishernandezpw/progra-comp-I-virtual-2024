@@ -31,27 +31,39 @@ namespace academica {
         }
 
         private void calcular() {
-            double num1 = Double.Parse(txtNum1.Text);
-            double num2 = Double.Parse(txtNum2.Text);
-            double respuesta = 0;
-            String operacion = "";
-            if (optSuma.Checked) {
-                respuesta = num1 + num2;
-                operacion = "suma";
+            try {
+                erpCalculadora.Clear();
+                double num1 = Double.Parse(txtNum1.Text);
+                double num2 = Double.Parse(txtNum2.Text);
+                double respuesta = 0;
+                String operacion = "";
+                if (optSuma.Checked) {
+                    respuesta = num1 + num2;
+                    operacion = "suma";
+                }
+                if (optResta.Checked) {
+                    respuesta = num1 - num2;
+                    operacion = "resta";
+                }
+                if (optMultiplicacion.Checked) {
+                    respuesta = num1 * num2;
+                    operacion = "multiplicación";
+                }
+                if (optDivision.Checked) {
+                    respuesta = num1 / num2;
+                    operacion = "división";
+                }
+                lblRespuesta.Text = "La " + operacion + " es igual a: " + respuesta;
+            } catch (Exception e) {
+                //e.Message
+                if( txtNum1.Text.Trim()=="") {
+                    erpCalculadora.SetError(txtNum1, "Por favor ingrese el primer numero");
+                }
+                if (txtNum2.Text.Trim() == "") {
+                    erpCalculadora.SetError(txtNum2, "Por favor ingrese el segundo numero");
+                }
+                lblRespuesta.Text = "Por favor ingrese los numero solicitados";
             }
-            if (optResta.Checked) {
-                respuesta = num1 - num2;
-                operacion = "resta";
-            }
-            if (optMultiplicacion.Checked) {
-                respuesta = num1 * num2;
-                operacion = "multiplicación";
-            }
-            if (optDivision.Checked) {
-                respuesta = num1 / num2;
-                operacion = "división";
-            }
-            lblRespuesta.Text = "La " + operacion + " es igual a: " + respuesta;
         }
     }
 }
