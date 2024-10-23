@@ -14,9 +14,44 @@ namespace academica {
             InitializeComponent();
         }
 
-        private void btnSaludar_Click(object sender, EventArgs e) {
-            MessageBox.Show("Hola, chicos de Progra I. Bienvenidos al fascinante mundo de la programacion.",
-                "Saludo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void btnCalcular_Click(object sender, EventArgs e) {
+            double num1 = Double.Parse(txtNum1.Text);
+            double num2 = Double.Parse(txtNum2.Text);
+            double respuesta = 0;
+            String operacion = "";
+            if ( optSuma.Checked) {
+                respuesta = num1 + num2;
+                operacion = "suma";
+            }
+            if (optResta.Checked) {
+                respuesta = num1 - num2;
+                operacion = "resta";
+            }
+            if (optMultiplicacion.Checked) {
+                respuesta = num1 * num2;
+                operacion = "multiplicación";
+            }
+            if (optDivision.Checked) {
+                respuesta = num1 / num2;
+                operacion = "división";
+            }
+            lblRespuesta.Text = "La "+ operacion + " es igual a: "+ respuesta;
+        }
+
+        private void optSuma_Click(object sender, EventArgs e) {
+            lblRespuesta.Text = "Respuesta: ?";
+        }
+
+        private void optResta_Click(object sender, EventArgs e) {
+            lblRespuesta.Text = "Respuesta: ?";
+        }
+
+        private void optMultiplicacion_Click(object sender, EventArgs e) {
+            lblRespuesta.Text = "Respuesta: ?";
+        }
+
+        private void optDivision_Click(object sender, EventArgs e) {
+            lblRespuesta.Text = "Respuesta: ?";
         }
     }
 }
