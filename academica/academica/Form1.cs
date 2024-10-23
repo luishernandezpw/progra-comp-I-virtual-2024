@@ -31,6 +31,7 @@ namespace academica {
         }
 
         private void calcular() {
+            double n = 0;
             try {
                 erpCalculadora.Clear();
                 double num1 = Double.Parse(txtNum1.Text);
@@ -56,13 +57,18 @@ namespace academica {
                 lblRespuesta.Text = "La " + operacion + " es igual a: " + respuesta;
             } catch (Exception e) {
                 //e.Message
-                if( txtNum1.Text.Trim()=="") {
+                /*txtNum1.Text = "";
+                txtNum2.Text = "";*/
+
+                if (txtNum1.Text.Trim() == "" || 
+                    !Double.TryParse(txtNum1.Text, out n)) {
                     erpCalculadora.SetError(txtNum1, "Por favor ingrese el primer numero");
                 }
-                if (txtNum2.Text.Trim() == "") {
+                if (txtNum2.Text.Trim() == "" || 
+                    !Double.TryParse(txtNum2.Text, out n)) {
                     erpCalculadora.SetError(txtNum2, "Por favor ingrese el segundo numero");
                 }
-                lblRespuesta.Text = "Por favor ingrese los numero solicitados";
+                lblRespuesta.Text = "Por favor ingrese los numero solicitados ";
             }
         }
     }
