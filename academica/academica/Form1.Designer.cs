@@ -23,7 +23,6 @@
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent() {
-            this.btnCalcular = new System.Windows.Forms.Button();
             this.lblNum1 = new System.Windows.Forms.Label();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.txtNum2 = new System.Windows.Forms.TextBox();
@@ -36,17 +35,6 @@
             this.optSuma = new System.Windows.Forms.RadioButton();
             this.grbOpciones.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCalcular
-            // 
-            this.btnCalcular.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(233, 205);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(179, 59);
-            this.btnCalcular.TabIndex = 0;
-            this.btnCalcular.Text = "CALCULAR";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // lblNum1
             // 
@@ -148,13 +136,11 @@
             // optSuma
             // 
             this.optSuma.AutoSize = true;
-            this.optSuma.Checked = true;
             this.optSuma.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optSuma.Location = new System.Drawing.Point(23, 39);
             this.optSuma.Name = "optSuma";
             this.optSuma.Size = new System.Drawing.Size(81, 28);
             this.optSuma.TabIndex = 0;
-            this.optSuma.TabStop = true;
             this.optSuma.Text = "Suma";
             this.optSuma.UseVisualStyleBackColor = true;
             this.optSuma.Click += new System.EventHandler(this.optSuma_Click);
@@ -170,7 +156,6 @@
             this.Controls.Add(this.lblNum2);
             this.Controls.Add(this.txtNum1);
             this.Controls.Add(this.lblNum1);
-            this.Controls.Add(this.btnCalcular);
             this.Name = "Form1";
             this.Text = "Saludo";
             this.grbOpciones.ResumeLayout(false);
@@ -181,8 +166,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label lblNum1;
         private System.Windows.Forms.TextBox txtNum1;
         private System.Windows.Forms.TextBox txtNum2;

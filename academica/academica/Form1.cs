@@ -14,12 +14,28 @@ namespace academica {
             InitializeComponent();
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e) {
+        private void optSuma_Click(object sender, EventArgs e) {
+            calcular();
+        }
+
+        private void optResta_Click(object sender, EventArgs e) {
+            calcular();
+        }
+
+        private void optMultiplicacion_Click(object sender, EventArgs e) {
+            calcular();
+        }
+
+        private void optDivision_Click(object sender, EventArgs e) {
+            calcular();
+        }
+
+        private void calcular() {
             double num1 = Double.Parse(txtNum1.Text);
             double num2 = Double.Parse(txtNum2.Text);
             double respuesta = 0;
             String operacion = "";
-            if ( optSuma.Checked) {
+            if (optSuma.Checked) {
                 respuesta = num1 + num2;
                 operacion = "suma";
             }
@@ -35,23 +51,7 @@ namespace academica {
                 respuesta = num1 / num2;
                 operacion = "división";
             }
-            lblRespuesta.Text = "La "+ operacion + " es igual a: "+ respuesta;
-        }
-
-        private void optSuma_Click(object sender, EventArgs e) {
-            lblRespuesta.Text = "Respuesta: ?";
-        }
-
-        private void optResta_Click(object sender, EventArgs e) {
-            lblRespuesta.Text = "Respuesta: ?";
-        }
-
-        private void optMultiplicacion_Click(object sender, EventArgs e) {
-            lblRespuesta.Text = "Respuesta: ?";
-        }
-
-        private void optDivision_Click(object sender, EventArgs e) {
-            lblRespuesta.Text = "Respuesta: ?";
+            lblRespuesta.Text = "La " + operacion + " es igual a: " + respuesta;
         }
     }
 }
