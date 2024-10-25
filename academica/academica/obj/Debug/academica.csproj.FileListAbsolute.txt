@@ -8,3 +8,5 @@ C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\academica\academica\o
 C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\academica\academica\obj\Debug\academica.csproj.CoreCompileInputs.cache
 C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\academica\academica\obj\Debug\academica.exe
 C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\academica\academica\obj\Debug\academica.pdb
+C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\academica\academica\bin\Debug\db_academica.mdf
+C:\Users\Luis Hernandez\Desktop\progra-comp-I-virtual-2024\academica\academica\bin\Debug\db_academica_log.ldf

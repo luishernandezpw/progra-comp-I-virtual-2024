@@ -15,11 +15,14 @@ namespace academica {
 
         public db_conexion() {
             miConexion.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academica.mdf;Integrated Security=True";
+            miConexion.Open(); //abrimos la conexion
         }
         public DataSet obtenerDatos() {
             ds.Clear(); //limpiamos el dataset
             miComando.Connection = miConexion; //asignamos la conexion al comando para pueda ejecutar las consultas
             miComando.CommandText = "SELECT * FROM alumnos"; //consulta SQL
+
+            miAdaptador.SelectCommand = miComando; //asignamos el comando al adaptador
             miAdaptador.Fill(ds, "alumnos"); //llenamos el dataset con la tabla alumnos
 
             return ds;
