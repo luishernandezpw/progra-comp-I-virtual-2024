@@ -27,5 +27,30 @@ namespace academica {
 
             return ds;
         }
+        public String administrarAlumnos(String[] alumno) {
+            String sql = "";
+            if (alumno[0] == "nuevo") {//accion nuevo
+                sql = "INSERT INTO alumnos(codigo, nombre, direccion, telefono) VALUES(" +
+                    "'" + alumno[2] + "'," +
+                    "'" + alumno[3] + "'," +
+                    "'" + alumno[4] + "'," +
+                    "'" + alumno[5] + "')";
+            } else if (alumno[0] == "modificar") {
+                sql = "UPDATE alumnos SET codigo='" + alumno[2] + "', nombre='" + alumno[3] + "', " +
+                    "direccion='" + alumno[4] + "', telefono='" + alumno[5] + "' WHERE idAlumno=" + alumno[1];
+            } else if (alumno[0] == "eliminar") {
+                sql = "DELETE FROM alumnos WHERE idAlumno='" + alumno[1] + "'";
+            }
+            return ejecutarSQL(sql);
+        }
+        private string ejecutarSQL(String sql) {
+            try {
+                miComando.Connection = miConexion;
+                miComando.CommandText = sql;
+                return miComando.ExecuteNonQuery().ToString();
+            } catch (Exception ex) {
+                return ex.Message;
+            }
+        }
     }
 }

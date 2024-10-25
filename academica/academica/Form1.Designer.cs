@@ -42,9 +42,18 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.grdDatos = new System.Windows.Forms.DataGridView();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.idAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDatos.SuspendLayout();
             this.grbNavegacion.SuspendLayout();
             this.grbEdicion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // grbDatos
@@ -59,7 +68,7 @@
             this.grbDatos.Controls.Add(this.lblCodigo);
             this.grbDatos.Location = new System.Drawing.Point(21, 25);
             this.grbDatos.Name = "grbDatos";
-            this.grbDatos.Size = new System.Drawing.Size(574, 211);
+            this.grbDatos.Size = new System.Drawing.Size(410, 211);
             this.grbDatos.TabIndex = 0;
             this.grbDatos.TabStop = false;
             this.grbDatos.Text = "DATOS";
@@ -102,7 +111,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(114, 112);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(418, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(288, 20);
             this.txtDireccion.TabIndex = 5;
             // 
             // lblDireccion
@@ -139,7 +148,7 @@
             this.grbNavegacion.Controls.Add(this.btnSiguiente);
             this.grbNavegacion.Controls.Add(this.btnAnterior);
             this.grbNavegacion.Controls.Add(this.btnPrimero);
-            this.grbNavegacion.Location = new System.Drawing.Point(21, 254);
+            this.grbNavegacion.Location = new System.Drawing.Point(13, 280);
             this.grbNavegacion.Name = "grbNavegacion";
             this.grbNavegacion.Size = new System.Drawing.Size(241, 64);
             this.grbNavegacion.TabIndex = 1;
@@ -151,7 +160,7 @@
             this.grbEdicion.Controls.Add(this.btnEliminar);
             this.grbEdicion.Controls.Add(this.btnModificar);
             this.grbEdicion.Controls.Add(this.btnNuevo);
-            this.grbEdicion.Location = new System.Drawing.Point(268, 254);
+            this.grbEdicion.Location = new System.Drawing.Point(260, 280);
             this.grbEdicion.Name = "grbEdicion";
             this.grbEdicion.Size = new System.Drawing.Size(327, 64);
             this.grbEdicion.TabIndex = 2;
@@ -221,6 +230,7 @@
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -231,6 +241,7 @@
             this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -241,12 +252,87 @@
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // grdDatos
+            // 
+            this.grdDatos.AllowUserToAddRows = false;
+            this.grdDatos.AllowUserToDeleteRows = false;
+            this.grdDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAlumno,
+            this.codigo,
+            this.nombre,
+            this.direccion,
+            this.telefono});
+            this.grdDatos.Location = new System.Drawing.Point(441, 71);
+            this.grdDatos.Name = "grdDatos";
+            this.grdDatos.ReadOnly = true;
+            this.grdDatos.Size = new System.Drawing.Size(450, 203);
+            this.grdDatos.TabIndex = 3;
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(437, 34);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(70, 20);
+            this.lblBuscar.TabIndex = 8;
+            this.lblBuscar.Text = "Buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(504, 36);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(387, 20);
+            this.txtBuscar.TabIndex = 8;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            // 
+            // idAlumno
+            // 
+            this.idAlumno.DataPropertyName = "idAlumno";
+            this.idAlumno.HeaderText = "ID";
+            this.idAlumno.Name = "idAlumno";
+            this.idAlumno.ReadOnly = true;
+            this.idAlumno.Visible = false;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "CODIGO";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "DIRECCION";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 362);
+            this.ClientSize = new System.Drawing.Size(897, 361);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblBuscar);
+            this.Controls.Add(this.grdDatos);
             this.Controls.Add(this.grbEdicion);
             this.Controls.Add(this.grbNavegacion);
             this.Controls.Add(this.grbDatos);
@@ -258,7 +344,9 @@
             this.grbNavegacion.ResumeLayout(false);
             this.grbNavegacion.PerformLayout();
             this.grbEdicion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdDatos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -283,6 +371,14 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridView grdDatos;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAlumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }
 
