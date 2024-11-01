@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Luis Hernandez\\Desktop\\progra-comp-I-virtual-2024\\academica\\academica\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Luis Hernandez\\Desktop\\progra-comp-I-virtual-2024\\academica\\academica\\wwwroot\\img\\milogo.png",
+      "PackagePath": "staticwebassets\\img\\milogo.png"
+    },
+    {
       "Id": "C:\\Users\\Luis Hernandez\\Desktop\\progra-comp-I-virtual-2024\\academica\\academica\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
